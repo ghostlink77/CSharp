@@ -28,7 +28,7 @@ namespace CsTest
         {
             return num1 + num2;
         }
-        public float add(float num1, float num2)
+        public double add(double num1, double num2)
         {
             return num1 + num2;
         }
@@ -36,25 +36,17 @@ namespace CsTest
     }
     class Program
     {
-        public void swap(int num1, int num2)
-        {
-            int temp = num1;
-            num1 = num2;
-            num2 = temp;
-        }
-        private void Awake()
-        {
-            int a = 3, b = 4;
-            swap(a, b);
-        }
+        
         static void Main(string[] args)
         {
-            int[] nums = new int[10];
+            int a = 3, b = 5;
             Method method = new Method();
+            Console.WriteLine(method.add(3.1, 3.14));
+            Console.WriteLine();
 
-
-            for (int i = 1; i <= 10; i++) nums[i] = i;
-            for (int i = 1; i <= 10; i++) Console.WriteLine(nums[i]);
+            Console.WriteLine("before swap : a = {0} b = {1}", a, b);
+            method.swap(ref a, ref b);
+            Console.WriteLine("after swap  : a = {0} b = {1}",a, b);
         }
     }
 }
