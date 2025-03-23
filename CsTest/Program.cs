@@ -56,8 +56,20 @@ namespace CsTest
             Console.WriteLine("before swap : a = {0} b = {1}", a, b);
             method.swap(ref a, ref b);
             Console.WriteLine("after swap  : a = {0} b = {1}",a, b);
+            Console.WriteLine();
 
             method.method2("2", str2: "1");
+
+            Player player1;
+            Player player2;
+
+            player1 = new Player();
+            player1.TakeDamage(100);
+            player1.Status();
+            // player2.TakeDamage(100); error
+            player2 = new Player();
+            player2 = player1.DeepCopy();
+            player2.Status();
         }
     }
 }
