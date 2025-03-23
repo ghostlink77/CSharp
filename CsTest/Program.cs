@@ -33,6 +33,15 @@ namespace CsTest
             return num1 + num2;
         }
 
+        //public void method1(string str1, int num1 = 0, string str2)
+        //{
+        //    Console.WriteLine(str1 + num1 + str2);
+        //}
+        public void method2(string str1, int num1 = 0, string str2 = "null")
+        {
+            Console.WriteLine(str1 + num1 + str2);
+        }
+
     }
     class Program
     {
@@ -47,6 +56,8 @@ namespace CsTest
             Console.WriteLine("before swap : a = {0} b = {1}", a, b);
             method.swap(ref a, ref b);
             Console.WriteLine("after swap  : a = {0} b = {1}",a, b);
+
+            method.method2("2", str2: "1");
         }
     }
 }
