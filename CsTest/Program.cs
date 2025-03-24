@@ -82,6 +82,13 @@ namespace CsTest
             player1.Hit(goblin);
             player1.Hit(dragon);
             player1.Hit(slime);
+
+            Enemy enemy = new Slime();
+            if (!(enemy is Goblin)) Console.WriteLine("Enemy is not Goblin");
+            if (enemy is Slime) Console.WriteLine("Enemy is Slime");
+
+            Goblin goblin1 = enemy as Goblin;
+            if (goblin1 == null) Console.WriteLine("goblin1 is null");
         }
     }
 }
