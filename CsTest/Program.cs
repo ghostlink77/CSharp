@@ -48,6 +48,7 @@ namespace CsTest
         
         static void Main(string[] args)
         {
+            // method
             int a = 3, b = 5;
             Method method = new Method();
             Console.WriteLine(method.add(3.1, 3.14));
@@ -60,16 +61,27 @@ namespace CsTest
 
             method.method2("2", str2: "1");
 
+            // class basic
             Player player1;
             Player player2;
 
             player1 = new Player();
             player1.TakeDamage(100);
             player1.Status();
-            // player2.TakeDamage(100); error
+            // player2.TakeDamage(100); <= error
             player2 = new Player();
             player2 = player1.DeepCopy();
             player2.Status();
+            Console.WriteLine();
+
+            // class advance
+            Enemy goblin = new Goblin();
+            Enemy dragon = new Dragon();
+            Enemy slime = new Slime();
+
+            player1.Hit(goblin);
+            player1.Hit(dragon);
+            player1.Hit(slime);
         }
     }
 }
